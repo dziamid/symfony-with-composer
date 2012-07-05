@@ -53,7 +53,7 @@ system(sprintf('%s %s %s', $interpreter, escapeshellarg($rootDir.'/composer.phar
 system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/bin/build_bootstrap')));
 
 // Update assets
-system(sprintf('%s %s assets:install %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
+system(sprintf('%s %s assets:install --symlink %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
 
 // Remove the cache
 system(sprintf('%s %s cache:clear --no-warmup', $interpreter, escapeshellarg($rootDir.'/app/console')));
